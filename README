@@ -1,0 +1,31 @@
+ffx exploration of trainXXYY.CIM.ARA. data
+
+S= fun(XX)
+Derece=fun(XX)
+Hiz=fun(XX)
+
+Flow:
+
+
+1. run1 - run72 
+simple regression model.
+submit.tcl -> run?? (train/test ffx runs for 6 years, 4 cins/pist, 3 output variables)
+for run??
+eval.tcl = R < ../pareto.R    evaluates and creates tahmin.rda for all models generated
+
+2. xrun1 - xrunXXXX
+# cross runs
+submitCross.tcl > xrun?? (train x text x 6 years x 4cins/pist x 3 outputs)
+R < ../analPareto.R
+R < ../paretoCrossEval.R
+only the last model get used to test evaluation
+This model uses all samples 
+
+
+3. s1234 - s1234run1 - run72
+submitS1234Cross.tcl > s1234run??
+only uses the last model to get test evaluation for ALL available data (test)
+6 train yearly x 4 cins/pist x 3 outputs 
+only S1234 taken.
+
+
